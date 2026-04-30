@@ -24,7 +24,7 @@
   "devDependencies": {
     "@octokit/openapi": "^22.0.0",
     "c8": "^11.0.0",
-    "esbuild": "^0.27.4",
+    "esbuild": "^0.28.0",
     "open-cli": "^9.0.0",
     "undici": "^7.24.6",
     "yaml": "^2.8.3"
