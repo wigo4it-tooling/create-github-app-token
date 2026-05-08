@@ -37,7 +37,7 @@ jobs:
       - name: Update major version tag
         id: update-major-tag
         if: steps.release-please.outputs.release_created == 'true' && github.ref_name != 'beta'
-        uses: octokit/request-action@v2.x
+        uses: octokit/request-action@b91aabaa861c777dcdb14e2387e30eddf04619ae # v3.0.0
         continue-on-error: true
         with:
           route: PATCH /repos/${{ github.repository }}/git/refs/tags/v${{ steps.release-please.outputs.major }}
@@ -48,7 +48,7 @@ jobs:
 
       - name: Create major version tag
         if: steps.release-please.outputs.release_created == 'true' && github.ref_name != 'beta' && steps.update-major-tag.outcome == 'failure'
-        uses: octokit/request-action@v2.x
+        uses: octokit/request-action@b91aabaa861c777dcdb14e2387e30eddf04619ae # v3.0.0
         with:
           route: POST /repos/${{ github.repository }}/git/refs
           ref: refs/tags/v${{ steps.release-please.outputs.major }}
